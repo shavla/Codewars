@@ -1,0 +1,14 @@
+// Returns number of complete beeramid levels
+var beeramid = function(bonus, price) {
+  if(price > bonus) return 0;
+  if(price == bonus) return 1;
+  let quantity = bonus/price;
+  let count = 0;
+  let sum = 0;
+  for(let i = 1; i < Math.floor(quantity); i++){
+    sum += i*i;
+    if(sum > quantity) break;
+    count++;
+  }
+  return count;
+}
