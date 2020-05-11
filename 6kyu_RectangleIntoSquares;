@@ -1,0 +1,20 @@
+function sqInRect(lng, wdth){
+  if(wdth == lng) return null;
+  if(wdth > lng){
+    let next = wdth;
+    wdth = lng;
+    lng = next;
+  }
+  let res = [];
+  while(true){
+      res.push(wdth);
+      lng = lng - wdth;
+      if(lng == 0) break;
+      if(wdth > lng){
+        let theN = wdth;
+        wdth = lng;
+        lng = theN;
+      }
+  }
+  return res;
+}
